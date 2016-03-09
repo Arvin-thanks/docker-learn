@@ -21,5 +21,5 @@ sudo docker run -d -P --volumes-from james_blog thanks/apache<br/>
 在更改网站相关源码后，可以使用sudo docker start james_blog来启动容器。<br/>
 扩展jekyll示例网站<br/>
 运行多个Apache容器，这些容器都使用来自james_blog容器的卷。这些apache容器前面加一个负载均衡器，我们就拥有了一个web集群<br/>
-进一步构建一个镜像，这个镜像把用户提供的源数据复制到卷里。在把这个卷挂载到从thanks/jekyll镜像创建的容器。这个就是一个可歉意的通用方案，而且不需要宿主机本地包含任何源代码。<br/>
+进一步构建一个镜像，这个镜像把用户提供的源数据复制到卷里。在把这个卷挂载到从thanks/jekyll镜像创建的容器。这个就是一个可以的通用方案，而且不需要宿主机本地包含任何源代码。<br/>
 在一个扩展基础上可以很容器为我们的额服务构建一个Web前端，这个服务用于从指定的源自动构建和部署网站。这个你就有一个完全属于自己的github Pages了<br/>
