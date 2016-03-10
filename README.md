@@ -8,4 +8,4 @@ docker学习笔记<br />
   建议将修改好的容器提交，做为镜像保存<br />
 因为启动容器时会重新初始化dns，所以修改docker的默认dns
 vi /etc/default/docker
-修改#docker_OPTS="--dns 8.8.8.8 --dns 8.8.4.4"为#docker_OPTS="--dns 114.114.114.114"
+修改#docker_OPTS="--dns 8.8.8.8 --dns 8.8.4.4"为docker_OPTS="--dns 114.114.114.114"
