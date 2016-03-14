@@ -1,9 +1,14 @@
 FROM thanks/ubuntu
 MAINTAINER zhangbin@comein.cn
-ENV REFRESHED_AT 2016-03-08
+ENV REFRESHED_AT 2016-03-14
 RUN apt-get -y update
-RUN apt-get -y install wget
+RUN apt-get -y install git
+RUN cd /var/lib/ && mkdir tomcat7  && cd tomcat7 && mkdir webapps
 VOLUME ["/var/lib/tomcat7/webapps"]
 WORKDIR /var/lib/tomcat7/webapps/
-ENTRYPOINT ["wget"]
-CMD ["-?"]
+ADD fetcher.sh /usr/local/src/fetcher.sh
+RUN chmod +x /usr/local/src/fetcher.sh
+ADD doc.sh /var/local/src/doc.sh
+RUN chmod +x /var/local/src/doc.sh
+ENTRYPOINT ["sh"]
+CMD ["/var/local/src/doc.sh"]
