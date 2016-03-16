@@ -3,7 +3,6 @@ MAINTAINER zhangbin@comein.cn
 ENV REFRESHED_AT 2016-03-14
 RUN apt-get -y update
 RUN apt-get -y install git
-RUN cd /var/lib/ && mkdir tomcat7  && cd tomcat7 && mkdir webapps
 VOLUME ["/var/lib/tomcat7/webapps"]
 WORKDIR /var/lib/tomcat7/webapps/
 ADD fetcher.sh /usr/local/src/fetcher.sh
