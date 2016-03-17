@@ -4,3 +4,6 @@
 <br/>
 运行war文件:<br/>
 sudo docker run --name sample_app --volumes-from sample -d -P thanks/tomcat7
+
+
+ sudo docker run -d -P --name event_interface -v /home/comein/test/comein:/var/lib/tomcat7/webapps/comein --link redis_primary:redis_primary thanks/tomcat7
